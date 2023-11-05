@@ -1,3 +1,4 @@
+// wait for the page to load first
 document.addEventListener('DOMContentLoaded', function () {
   // add amenitites choosen to a list
   const amenityList = [];
@@ -26,7 +27,7 @@ document.addEventListener('DOMContentLoaded', function () {
     $('.amenities h4').text(amenityNameList);
   });
 
-  // check the status of api if it os OK light red of not okay light gray
+  // check the status of api if it os OK light red if not okay light gray
   $.get('http://0.0.0.0:5001/api/v1/status/', function (data, textStatus) {
     if (data.status === 'OK') {
       $('div#api_status').addClass('available');
