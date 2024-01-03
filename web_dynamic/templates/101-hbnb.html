@@ -10,7 +10,7 @@
 	<link type="text/css" rel="stylesheet" href="../static/styles/8-places.css?{{cache_id}}">
 	<link rel="icon" href="../static/images/icon.png?{{cache_id}}" />
 	<script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
-	<script src="static/scripts/4-hbnb.js?{{cache_id}}"></script>
+	<script src="static/scripts/101-hbnb.js?{{cache_id}}"></script>
 	<title>HBnB</title>
 </head>
 
@@ -23,15 +23,17 @@
 		<section class="filters">
 			<div class="locations">
 				<h3>States</h3>
-				<h4>&nbsp;</h4>
+				<h4 class="stateorcity">&nbsp;</h4>
 				<div class="popover">
 					<ul>
 						{% for state in states %}
-						<li>
+						<li class="stateli"> <input type="checkbox" class="statecheckbox" data-id="{{state[0].id}}"
+								data-name="{{state[0].name}}">
 							<h2>{{ state[0].name }}:</h2>
 							<ul>
 								{% for city in state[1] %}
-								<li>{{ city.name }}</li>
+								<li class="cityli"><input type="checkbox" class="citycheckbox" data-id="{{city.id}}"
+										data-name="{{city.name}}">{{ city.name }}</li>
 								{% endfor %}
 							</ul>
 						</li>
@@ -53,7 +55,7 @@
 			</div>
 			<button type="button">Search</button>
 		</section>
-		<div class="placesh1">
+		<div class="places">
 			<h1>Places</h1>
 		</div>
 		<section class="places">
@@ -64,8 +66,4 @@
 	</footer>
 </body>
 
-<<<<<<< HEAD
 </html>
-=======
-</html>
->>>>>>> 923be5c529200d19259f15becfc5e653cffe46d5
